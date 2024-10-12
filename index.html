@@ -18,32 +18,16 @@
             <a href="https://fisika.tarbiyah.radenintan.ac.id/">FisikAdalahKita</a>
         </div>
 
-    <!-- Tambahkan Script untuk logika pengumuman -->
-    <script>
-        const dataPengumuman = [
-            { nama: 'Budi', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
-            { nama: 'Siti', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
-            { nama: 'Agus', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
-            // Tambahkan nama peserta lainnya di sini
-        ];
+        <!-- Pengumuman -->
+        <div class="announcement">
+            <h2>Pengumuman</h2>
+            <p>Masukkan nama Anda untuk melihat pengumuman.</p>
+            <input type="text" id="nameInput" placeholder="Masukkan Nama">
+            <button onclick="checkAnnouncement()">Lihat Pengumuman</button>
 
-        function checkAnnouncement() {
-            const nameInput = document.getElementById('nameInput').value;
-            const resultDiv = document.getElementById('announcementResult');
+            <div id="announcementResult" style="margin-top: 20px; font-weight: bold;"></div>
+        </div>
 
-            // Cari nama di dalam data pengumuman
-            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
-
-            // Jika nama ditemukan, tampilkan pengumuman
-            if (peserta) {
-                resultDiv.textContent = peserta.pengumuman;
-                resultDiv.style.color = 'green';
-            } else {
-                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
-                resultDiv.style.color = 'red';
-            }
-        }
-    </script>
         <!-- Portofolio -->
         <div class="portfolio">
             <h2>Portofolio</h2>
@@ -74,17 +58,38 @@
                 <!-- Tambahkan proyek lain sesuai kebutuhan -->
             </div>
         </div>
-
-        <!-- Pengumuman -->
-        <div class="announcement">
-            <h2>Pengumuman</h2>
-            <p>Masukkan nama Anda untuk melihat pengumuman.</p>
-            <input type="text" id="nameInput" placeholder="Masukkan Nama">
-            <button onclick="checkAnnouncement()">Lihat Pengumuman</button>
-
-            <div id="announcementResult" style="margin-top: 20px; font-weight: bold;"></div>
-        </div>
     </div>
 
+    <!-- Tambahkan Script untuk logika pengumuman -->
+    <script>
+        const dataPengumuman = [
+            { nama: 'Budi', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
+            { nama: 'Siti', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
+            { nama: 'Agus', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
+            // Tambahkan nama peserta lainnya di sini
+        ];
+
+        function checkAnnouncement() {
+            const nameInput = document.getElementById('nameInput').value;
+            const resultDiv = document.getElementById('announcementResult');
+
+            // Cari nama di dalam data pengumuman
+            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
+
+            // Jika nama ditemukan, tampilkan pengumuman
+            if (peserta) {
+                resultDiv.textContent = peserta.pengumuman;
+                resultDiv.style.color = 'green';
+            } else if (nameInput) {
+                // Jika nama tidak ditemukan
+                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
+                resultDiv.style.color = 'yellow';
+            } else {
+                // Jika nama tidak lolos
+                resultDiv.textContent = 'Nama tidak lolos.';
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
 </body>
 </html>
