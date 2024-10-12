@@ -1,110 +1,106 @@
-/* Mengatur tampilan konten ke tengah halaman */
-body {
-    height: 100vh; /* Mengambil tinggi penuh dari viewport */
-    display: flex;
-    justify-content: center; /* Mengatur horizontal centering */
-    align-items: center; /* Mengatur vertical centering */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Warna latar belakang */
-}
-
+/* Mengatur tata letak container agar konten berada di tengah */
 .container {
-    width: 100%;
     max-width: 800px;
+    margin: 0 auto; /* Menempatkan konten di tengah layar */
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Menambahkan border radius untuk tampilan lebih halus */
     text-align: center; /* Mengatur teks agar berada di tengah */
+    font-family: Arial, sans-serif; /* Font yang digunakan */
 }
 
 /* Mengatur ukuran gambar profil */
 .profile-img {
-    width: 40px; /* Atur lebar gambar */
-    height: 40px; /* Atur tinggi gambar */
-    object-fit: cover; /* Agar gambar tetap rapi dalam bentuk kotak */
-    border-radius: 50%; /* Menjadikan gambar berbentuk lingkaran */
-    margin: 0 auto; /* Untuk menempatkan gambar di tengah */
-    display: block; /* Mengubah gambar menjadi elemen block agar 'margin' bekerja */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan bayangan halus pada gambar */
+    width: 150px; /* Ukuran lebar gambar */
+    height: 150px; /* Ukuran tinggi gambar */
+    object-fit: cover; /* Menjaga proporsi gambar */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin: 0 auto 20px auto; /* Gambar berada di tengah dengan jarak di bawah */
+    display: block; /* Agar margin berfungsi dengan benar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
 }
 
-}
-
-h1, p {
-    text-align: center;
-}
-
-.contact {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.contact a {
-    margin: 0 10px;
-    text-decoration: none;
+/* Pengaturan teks utama */
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
     color: #333;
 }
 
-.portfolio {
-    margin-top: 40px;
+/* Pengaturan paragraf */
+p {
+    font-size: 1.1em;
+    color: #666;
 }
 
-.portfolio h2 {
-    text-align: center;
+/* Mengatur link dalam bagian kontak */
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Portofolio */
+.portfolio {
+    margin-top: 30px;
 }
 
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .project {
-    background-color: #f4f4f4;
-    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.project a {
-    color: #007BFF;
-    text-decoration: none;
+.project img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
-.project a:hover {
-    color: #0056b3;
+.project h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
-/* Gaya untuk bagian pengumuman */
+.project p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Tombol Pengumuman */
 .announcement {
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 30px;
 }
 
-#nameInput {
+.announcement input {
     padding: 10px;
-    font-size: 16px;
+    font-size: 1em;
     margin-right: 10px;
 }
 
-button {
+.announcement button {
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
 }
 
-button:hover {
+.announcement button:hover {
     background-color: #0056b3;
-}
-
-#announcementResult {
-    margin-top: 20px;
-    font-size: 18px;
 }
