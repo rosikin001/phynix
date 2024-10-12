@@ -18,6 +18,32 @@
             <a href="https://fisika.tarbiyah.radenintan.ac.id/">FisikAdalahKita</a>
         </div>
 
+    <!-- Tambahkan Script untuk logika pengumuman -->
+    <script>
+        const dataPengumuman = [
+            { nama: 'Budi', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
+            { nama: 'Siti', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
+            { nama: 'Agus', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
+            // Tambahkan nama peserta lainnya di sini
+        ];
+
+        function checkAnnouncement() {
+            const nameInput = document.getElementById('nameInput').value;
+            const resultDiv = document.getElementById('announcementResult');
+
+            // Cari nama di dalam data pengumuman
+            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
+
+            // Jika nama ditemukan, tampilkan pengumuman
+            if (peserta) {
+                resultDiv.textContent = peserta.pengumuman;
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
         <!-- Portofolio -->
         <div class="portfolio">
             <h2>Portofolio</h2>
@@ -60,31 +86,5 @@
         </div>
     </div>
 
-    <!-- Tambahkan Script untuk logika pengumuman -->
-    <script>
-        const dataPengumuman = [
-            { nama: 'Budi', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
-            { nama: 'Siti', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
-            { nama: 'Agus', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
-            // Tambahkan nama peserta lainnya di sini
-        ];
-
-        function checkAnnouncement() {
-            const nameInput = document.getElementById('nameInput').value;
-            const resultDiv = document.getElementById('announcementResult');
-
-            // Cari nama di dalam data pengumuman
-            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
-
-            // Jika nama ditemukan, tampilkan pengumuman
-            if (peserta) {
-                resultDiv.textContent = peserta.pengumuman;
-                resultDiv.style.color = 'green';
-            } else {
-                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
-                resultDiv.style.color = 'red';
-            }
-        }
-    </script>
 </body>
 </html>
