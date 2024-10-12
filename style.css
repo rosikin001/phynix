@@ -1,6 +1,6 @@
 /* Gradasi pada seluruh halaman */
 body {
-    background: linear-gradient(135deg, #89fffd, #3a8df5); /* Gradasi dari biru muda ke biru tua */
+    background: linear-gradient(135deg, #89fffd, #3a8df7); /* Gradasi dari biru muda ke biru tua */
     min-height: 100vh; /* Agar halaman menutupi seluruh viewport */
     margin: 0; /* Menghilangkan margin default */
     padding: 0; /* Menghilangkan padding default */
