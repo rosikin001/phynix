@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <img src="img/phynix.jpg" alt="Profile" class="profile-img">
-        <h1>Physisc Learning and Experiment Laboratory</h1>
+        <h1>Physics Learning and Experiment Laboratory</h1>
         <p>Deskripsi singkat tentang diri kamu.</p>
         <div class="contact">
             <a href="mailto:anasrosikin5@.com">Email</a> |
@@ -54,15 +54,14 @@
                     <p>Deskripsi proyek 3.</p>
                     <a href="https://link-ke-proyek-3.com">Lihat Proyek</a>
                 </div>
-                
-                <!-- Tambahkan proyek lain sesuai kebutuhan -->
             </div>
         </div>
     </div>
-<!-- Tambahkan ini sebelum tag penutup </body> -->
-<div class="footer">
-    <p>Website ini dibuat oleh [projrctsikinid2024]</p>
-</div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Website ini dibuat oleh [Nama Anda]</p>
+    </div>
 
     <!-- Tambahkan Script untuk logika pengumuman -->
     <script>
@@ -84,14 +83,9 @@
             if (peserta) {
                 resultDiv.textContent = peserta.pengumuman;
                 resultDiv.style.color = 'green';
-            } else if (nameInput) {
-                // Jika nama tidak ditemukan
+            } else {
                 resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
                 resultDiv.style.color = 'yellow';
-            } else {
-                // Jika nama tidak lolos
-                resultDiv.textContent = 'Nama tidak lolos.';
-                resultDiv.style.color = 'red';
             }
         }
     </script>
