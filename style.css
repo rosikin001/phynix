@@ -19,11 +19,17 @@ body {
     text-align: center; /* Mengatur teks agar berada di tengah */
 }
 
+/* Mengatur ukuran gambar profil */
 .profile-img {
-    width: 150px;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: block;
+    width: 150px; /* Atur lebar gambar */
+    height: 150px; /* Atur tinggi gambar */
+    object-fit: cover; /* Agar gambar tetap rapi dalam bentuk kotak */
+    border-radius: 50%; /* Menjadikan gambar berbentuk lingkaran */
+    margin: 0 auto; /* Untuk menempatkan gambar di tengah */
+    display: block; /* Mengubah gambar menjadi elemen block agar 'margin' bekerja */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan bayangan halus pada gambar */
+}
+
 }
 
 h1, p {
