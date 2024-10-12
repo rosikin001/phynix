@@ -4,8 +4,7 @@ body {
     min-height: 80vh; /* Agar halaman menutupi seluruh viewport */
     margin: 0; /* Menghilangkan margin default */
     padding: 0; /* Menghilangkan padding default */
-}
-/* Gaya untuk navigasi */
+}/* Gaya untuk navigasi */
 .navbar {
     background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
     padding: 10px 0; /* Jarak atas dan bawah */
@@ -38,7 +37,7 @@ body {
 
 /* Mengatur tata letak container agar konten berada di tengah */
 .container {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto; /* Menempatkan konten di tengah layar */
     padding: 20px;
     text-align: center; /* Mengatur teks agar berada di tengah */
@@ -56,7 +55,7 @@ body {
     border-radius: 50%; /* Membuat gambar menjadi bulat */
     margin: 0 auto 20px auto; /* Gambar berada di tengah dengan jarak di bawah */
     display: block; /* Agar margin berfungsi dengan benar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.186); /* Menambahkan bayangan halus */
 }
 
 /* Pengaturan teks utama */
@@ -154,6 +153,6 @@ p {
     color: #333; /* Warna teks footer */
     text-align: center; /* Teks berada di tengah */
     border-top: 1px solid #ddd; /* Garis atas untuk pemisahan */
-    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan */
+    background-color: rgba(255, 255, 255, 0.937); /* Latar belakang semi-transparan */
     border-radius: 0 0 15px 15px; /* Membulatkan sudut bawah */
 }
