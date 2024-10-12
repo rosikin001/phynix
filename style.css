@@ -28,6 +28,17 @@ body {
     display: block; /* Agar margin berfungsi dengan benar */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
 }
+/* Gaya untuk footer */
+.footer {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #333; /* Warna teks footer */
+    text-align: center; /* Teks berada di tengah */
+    border-top: 1px solid #ddd; /* Garis atas untuk pemisahan */
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan */
+    border-radius: 0 0 15px 15px; /* Membulatkan sudut bawah */
+}
 
 /* Pengaturan teks utama */
 h1 {
