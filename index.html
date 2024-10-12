@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- Menu Navigasi -->
+    <!-- Menu Navigasi -->
     <nav class="navbar">
         <ul>
             <li><a href="#home">Beranda</a></li>
@@ -16,21 +16,20 @@
             <li><a href="#contact">Kontak</a></li>
         </ul>
     </nav>
-    
-    <div class="container">
+
+    <div class="container" id="home">
         <img src="img/phynix.jpg" alt="Profile" class="profile-img">
         <h1>Physics Learning and Experiment Laboratory</h1>
-        <p>Deskripsi</p>
-        <p> </p>
-        <div class="contact">
+        <p>Deskripsi singkat tentang diri kamu.</p>
+        <div class="contact" id="contact">
             <a href="mailto:anasrosikin5@.com">Email</a> |
             <a href="https://radenintan.ac.id">Kampus</a> |
             <a href="https://www.instagram.com/lab.physicseducation/">Instagram</a> |
-            <a href="https://fisika.tarbiyah.radenintan.ac.id/">FisikaAdalahKita</a>
+            <a href="https://fisika.tarbiyah.radenintan.ac.id/">FisikAdalahKita</a>
         </div>
 
         <!-- Pengumuman -->
-        <div class="announcement">
+        <div class="announcement" id="announcement">
             <h2>Pengumuman</h2>
             <p>Masukkan nama Anda untuk melihat pengumuman.</p>
             <input type="text" id="nameInput" placeholder="Masukkan Nama">
@@ -40,7 +39,7 @@
         </div>
 
         <!-- Portofolio -->
-        <div class="portfolio">
+        <div class="portfolio" id="portfolio">
             <h2>Portofolio</h2>
             <div class="projects">
                 <div class="project">
@@ -71,7 +70,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>Copyright|2024|projectsikinid</p>
+        <p>Website ini dibuat oleh [Nama Anda]</p>
     </div>
 
     <!-- Tambahkan Script untuk logika pengumuman -->
@@ -96,7 +95,7 @@
                 resultDiv.style.color = 'green';
             } else {
                 resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
-                resultDiv.style.color = 'red';
+                resultDiv.style.color = 'yellow';
             }
         }
     </script>
