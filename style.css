@@ -1,6 +1,6 @@
 /* Gradasi pada seluruh halaman */
 body {
-    background: linear-gradient(135deg, #89fffd, #3a8df7); /* Gradasi dari biru muda ke biru tua */
+    background: linear-gradient(135deg, #89fffd, #3a8df8); /* Gradasi dari biru muda ke biru tua */
     min-height: 100vh; /* Agar halaman menutupi seluruh viewport */
     margin: 0; /* Menghilangkan margin default */
     padding: 0; /* Menghilangkan padding default */
@@ -20,8 +20,8 @@ body {
 
 /* Mengatur ukuran gambar profil */
 .profile-img {
-    width: 50px; /* Ukuran lebar gambar */
-    height: 50px; /* Ukuran tinggi gambar */
+    width: 150px; /* Ukuran lebar gambar */
+    height: 150px; /* Ukuran tinggi gambar */
     object-fit: cover; /* Menjaga proporsi gambar */
     border-radius: 50%; /* Membuat gambar menjadi bulat */
     margin: 0 auto 20px auto; /* Gambar berada di tengah dengan jarak di bawah */
