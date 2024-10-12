@@ -9,8 +9,8 @@
 
 /* Mengatur ukuran gambar profil */
 .profile-img {
-    width: 40px; /* Ukuran lebar gambar */
-    height: 40px; /* Ukuran tinggi gambar */
+    width: 50px; /* Ukuran lebar gambar */
+    height: 50px; /* Ukuran tinggi gambar */
     object-fit: cover; /* Menjaga proporsi gambar */
     border-radius: 50%; /* Membuat gambar menjadi bulat */
     margin: 0 auto 20px auto; /* Gambar berada di tengah dengan jarak di bawah */
@@ -64,8 +64,8 @@ p {
 }
 
 .project img {
-    width: 10px;
-    height: 10px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
