@@ -21,8 +21,8 @@ body {
 
 /* Mengatur ukuran gambar profil */
 .profile-img {
-    width: 150px; /* Atur lebar gambar */
-    height: 150px; /* Atur tinggi gambar */
+    width: 40px; /* Atur lebar gambar */
+    height: 40px; /* Atur tinggi gambar */
     object-fit: cover; /* Agar gambar tetap rapi dalam bentuk kotak */
     border-radius: 50%; /* Menjadikan gambar berbentuk lingkaran */
     margin: 0 auto; /* Untuk menempatkan gambar di tengah */
