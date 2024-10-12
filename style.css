@@ -5,6 +5,36 @@ body {
     margin: 0; /* Menghilangkan margin default */
     padding: 0; /* Menghilangkan padding default */
 }
+/* Gaya untuk navigasi */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+    padding: 10px 0; /* Jarak atas dan bawah */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan bawah */
+    position: sticky; /* Menempel saat scroll */
+    top: 0; /* Posisi di bagian atas */
+    z-index: 1000; /* Agar berada di atas konten lain */
+}
+
+.navbar ul {
+    list-style: none; /* Menghilangkan bullet point */
+    padding: 0; /* Menghilangkan padding */
+    text-align: center; /* Teks berada di tengah */
+}
+
+.navbar li {
+    display: inline; /* Menampilkan item menu secara horizontal */
+    margin: 0 15px; /* Jarak antar item menu */
+}
+
+.navbar a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #007bff; /* Warna teks */
+    font-weight: bold; /* Menebalkan teks */
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
 
 /* Mengatur tata letak container agar konten berada di tengah */
 .container {
