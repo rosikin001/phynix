@@ -1,6 +1,6 @@
 /* Gradasi pada seluruh halaman */
 body {
-    background: linear-gradient(135deg, #89fffd, #3a8df7); /* Gradasi dari biru muda ke biru tua */
+    background: linear-gradient(135deg, #00fffb, #0056c6); /* Gradasi dari biru muda ke biru tua */
     min-height: 80vh; /* Agar halaman menutupi seluruh viewport */
     margin: 0; /* Menghilangkan margin default */
     padding: 0; /* Menghilangkan padding default */
@@ -8,14 +8,14 @@ body {
 
 /* Mengatur tata letak container agar konten berada di tengah */
 .container {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto; /* Menempatkan konten di tengah layar */
     padding: 20px;
     text-align: center; /* Mengatur teks agar berada di tengah */
     font-family: Arial, sans-serif; /* Font yang digunakan */
-    background: rgba(255, 255, 255, 0.7); /* Latar belakang putih semi-transparan untuk konten */
+    background: rgba(255, 255, 255, 0.673); /* Latar belakang putih semi-transparan untuk konten */
     border-radius: 15px; /* Membuat sudut menjadi melengkung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan agar lebih elegan */
+    box-shadow: 0 4px 8px rgba(101, 101, 101, 0.988); /* Menambahkan bayangan agar lebih elegan */
 }
 
 /* Mengatur ukuran gambar profil */
