@@ -5,11 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHYNIX</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS untuk Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+            position: fixed; /* Menjadikan navbar tetap di atas saat di-scroll */
+            top: 0;
+            left: 0;
+            width: 100%; /* Menjaga lebar navbar penuh */
+            z-index: 1000; /* Menjaga navbar di atas elemen lain */
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none; /* Menyembunyikan menu */
+            position: absolute;
+            top: 50px; /* Mengatur posisi dropdown menu */
+            left: 0;
+            background-color: #444; /* Warna latar belakang menu */
+            width: 100%; /* Memastikan lebar menu sesuai dengan navbar */
+        }
+
+        .navbar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ffffff00; /* Garis pemisah antar item */
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .menu-icon {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Tampilan saat menu ditampilkan */
+        .navbar.show-menu ul {
+            display: block; /* Menampilkan menu ketika dalam keadaan aktif */
+        }
+
+        /* Gaya lainnya */
+        .container {
+            padding: 80px 20px 20px; /* Menambahkan padding atas untuk menghindari overlap dengan navbar */
+        }
+
+        .footer {
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Menu Navigasi -->
-    <nav class="navbar">
-        <ul>
+    <nav class="navbar" id="navbar">
+        <div class="menu-icon" id="menuToggle">&#9776;</div>
+        <ul id="menuList">
             <li><a href="#home">Beranda</a></li>
             <li><a href="#announcement">Pengumuman</a></li>
             <li><a href="#portfolio">Portofolio</a></li>
@@ -31,8 +92,9 @@
         <!-- Pengumuman -->
         <div class="announcement" id="announcement">
             <h2>Pengumuman</h2>
-            <p>Masukkan nama Anda untuk melihat pengumuman.</p>
+            <p>Masukkan nama dan token Anda untuk melihat pengumuman.</p>
             <input type="text" id="nameInput" placeholder="Masukkan Nama">
+            <input type="text" id="tokenInput" placeholder="Masukkan Token">
             <button onclick="checkAnnouncement()">Lihat Pengumuman</button>
 
             <div id="announcementResult" style="margin-top: 20px; font-weight: bold;"></div>
@@ -70,34 +132,52 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>Copyrigth|2024|projectsikinid</p>
+        <p>Copyright | 2024 | projectsikinid</p>
     </div>
 
     <!-- Tambahkan Script untuk logika pengumuman -->
     <script>
         const dataPengumuman = [
-            { nama: 'Budi', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
-            { nama: 'Siti', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
-            { nama: 'Agus', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
-            // Tambahkan nama peserta lainnya di sini
+            { nama: 'Budi', token: 'budi123', pengumuman: 'Selamat Budi, kamu lulus dengan nilai A!' },
+            { nama: 'Siti', token: 'siti123', pengumuman: 'Selamat Siti, kamu lulus dengan nilai B+!' },
+            { nama: 'Agus', token: 'agus123', pengumuman: 'Maaf Agus, kamu belum lulus. Coba lagi tahun depan.' },
         ];
+
+        let checkedName = null;
 
         function checkAnnouncement() {
             const nameInput = document.getElementById('nameInput').value;
+            const tokenInput = document.getElementById('tokenInput').value;
             const resultDiv = document.getElementById('announcementResult');
 
-            // Cari nama di dalam data pengumuman
+            if (checkedName && checkedName !== nameInput) {
+                resultDiv.textContent = 'Hanya satu orang yang dapat mengecek pengumuman.';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
             const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
 
-            // Jika nama ditemukan, tampilkan pengumuman
             if (peserta) {
-                resultDiv.textContent = peserta.pengumuman;
-                resultDiv.style.color = 'green';
+                if (peserta.token === tokenInput) {
+                    resultDiv.textContent = peserta.pengumuman;
+                    resultDiv.style.color = 'green';
+                    checkedName = nameInput; // Simpan nama yang sudah mengecek
+                } else {
+                    resultDiv.textContent = 'Token tidak valid. Silakan coba lagi.';
+                    resultDiv.style.color = 'red';
+                }
             } else {
                 resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
                 resultDiv.style.color = 'yellow';
             }
         }
+
+        // Menangani toggle menu
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show-menu'); // Menambahkan class untuk menampilkan atau menyembunyikan menu
+        });
     </script>
 </body>
 </html>
