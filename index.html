@@ -159,18 +159,40 @@
            { nama: 'Jizyul Muhsinin', token: '2311090026', pengumuman: 'Mohon Maaf Jizyul, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
         ];
 
-        function checkAnnouncement() {
-            const name = document.getElementById('nameInput').value;
-            const token = document.getElementById('tokenInput').value;
-            const result = dataPengumuman.find(item => item.nama === name && item.token === token);
+       let checkedName = null;
 
-            const resultElement = document.getElementById('announcementResult');
-            if (result) {
-                resultElement.textContent = result.pengumuman;
-                resultElement.style.color = result.status === 'lulus' ? 'green' : 'red'; // Warna hijau untuk lulus, merah untuk tidak lulus
+        function checkAnnouncement() {
+            const nameInput = document.getElementById('nameInput').value;
+            const tokenInput = document.getElementById('tokenInput').value;
+            const resultDiv = document.getElementById('announcementResult');
+
+            if (checkedName && checkedName !== nameInput) {
+                resultDiv.textContent = 'Hanya satu orang yang dapat mengecek pengumuman.';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
+
+            if (peserta) {
+                if (peserta.token === tokenInput) {
+                    resultDiv.textContent = peserta.pengumuman;
+                    
+                    // Warna berbeda untuk status lulus dan tidak lulus
+                    if (peserta.status === 'lulus') {
+                        resultDiv.style.color = 'green'; // Hijau untuk yang lulus
+                    } else {
+                        resultDiv.style.color = 'red'; // Merah untuk yang tidak lulus
+                    }
+
+                    checkedName = nameInput; // Simpan nama yang sudah mengecek
+                } else {
+                    resultDiv.textContent = 'Token tidak valid. Silakan coba lagi.';
+                    resultDiv.style.color = 'red';
+                }
             } else {
-                resultElement.textContent = 'Data tidak ditemukan';
-                resultElement.style.color = 'black';
+                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
+                resultDiv.style.color = 'black';
             }
         }
 
