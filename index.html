@@ -138,61 +138,48 @@
     <!-- Tambahkan Script untuk logika pengumuman -->
     <script>
         const dataPengumuman = [
-           { nama: 'M. Ariel Santosa', token: '2411090012', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Zulmia Indriani', token: '2311090022', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Rita Sovia Pramudita', token: '2311090016', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Ani Septiani', token: '2311090023', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Rara Ayu Nur Annisa Narika', token: '2311090037', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Syakira Mutia Putri', token: '2311090038', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'M. Abdillah Tarra Saputra', token: '2311090010', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Sastia Pratiwi', token: '2311090018', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Vriska Nur Rahmawati', token: '2311090039', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Mira Aisyah', token: '2311090034', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-           { nama: 'Wibbi Setianingrum', token: '2311090040', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-            { nama: 'Yunita Dwi Novianti', token: '2311090021', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-            { nama: 'Aziza Melanny Mustawa', token: '2311090005', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-           { nama: 'Tsabitah Nurhasanah', token: '2211090028', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-            { nama: 'M. Rizki Pratama', token: '2211090016', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-            { nama: ' Aisyah', token: '2211090002', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-            { nama: 'Putrie Anindya Salsabella', token: '2211090024', pengumuman: 'Selamat Anda dinyatakan Lulus' },
-            { nama: 'Feby Nabila Nuor', token: '2311090008', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-           { nama: 'Jizyul Muhsinin', token: '2311090026', pengumuman: 'Mohon Maaf Anda Tidak dinyatakan Lulus' },
-        ]; 
-
-        let checkedName = null;
+           { nama: 'M. Ariel Santosa', token: '2411090012', pengumuman: 'Selamat Ariel, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Zulmia Indriani', token: '2311090022', pengumuman: 'Selamat Zulmia, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Rita Sovia Pramudita', token: '2311090016', pengumuman: 'Selamat Rita, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Ani Septiani', token: '2311090023', pengumuman: 'Selamat Ani, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Rara Ayu Nur Annisa Narika', token: '2311090037', pengumuman: 'Selamat Rara, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Syakira Mutia Putri', token: '2311090038', pengumuman: 'Selamat Syakira, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'M. Abdillah Tarra Saputra', token: '2311090010', pengumuman: 'Selamat Abdillah, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Sastia Pratiwi', token: '2311090018', pengumuman: 'Selamat Sastia, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Vriska Nur Rahmawati', token: '2311090039', pengumuman: 'Selamat Vriska, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Mira Aisyah', token: '2311090034', pengumuman: 'Selamat Mira, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Wibbi Setianingrum', token: '2311090040', pengumuman: 'Selamat Wibbi, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'M. Rizki Pratama', token: '2211090016', pengumuman: 'Selamat Rizki, Anda dinyatakan Lulus', status: 'lulus' },
+           { nama: 'Putrie Anindya Salsabella', token: '2211090024', pengumuman: 'Selamat Anindya, Anda dinyatakan Lulus', status: 'lulus' }, 
+           { nama: 'Yunita Dwi Novianti', token: '2311090021', pengumuman: 'Mohon Maaf Yunita, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
+           { nama: 'Aziza Melanny Mustawa', token: '2311090005', pengumuman: 'Mohon Maaf Aziza, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
+           { nama: 'Tsabitah Nurhasanah', token: '2211090028', pengumuman: 'Mohon Maaf Tsabitah, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
+           { nama: 'Aisyah', token: '2211090002', pengumuman: 'Mohon Maaf Aisyah, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
+           { nama: 'Feby Nabila Nuor', token: '2311090008', pengumuman: 'Mohon Maaf Feby, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' },
+           { nama: '16.	Jizyul Muhsinin', token: '2311090026', pengumuman: 'Mohon Maaf Jizyul, Anda belum Lulus. Coba Lagi Semester Depan', status: 'tidak lulus' }
+        ];
 
         function checkAnnouncement() {
-            const nameInput = document.getElementById('nameInput').value;
-            const tokenInput = document.getElementById('tokenInput').value;
-            const resultDiv = document.getElementById('announcementResult');
+            const name = document.getElementById('nameInput').value;
+            const token = document.getElementById('tokenInput').value;
+            const result = dataPengumuman.find(item => item.nama === name && item.token === token);
 
-            if (checkedName && checkedName !== nameInput) {
-                resultDiv.textContent = 'Hanya satu orang yang dapat mengecek pengumuman.';
-                resultDiv.style.color = 'red';
-                return;
-            }
-
-            const peserta = dataPengumuman.find(p => p.nama.toLowerCase() === nameInput.toLowerCase());
-
-            if (peserta) {
-                if (peserta.token === tokenInput) {
-                    resultDiv.textContent = peserta.pengumuman;
-                    resultDiv.style.color = 'green';
-                    checkedName = nameInput; // Simpan nama yang sudah mengecek
-                } else {
-                    resultDiv.textContent = 'Token tidak valid. Silakan coba lagi.';
-                    resultDiv.style.color = 'red';
-                }
+            const resultElement = document.getElementById('announcementResult');
+            if (result) {
+                resultElement.textContent = result.pengumuman;
+                resultElement.style.color = result.status === 'lulus' ? 'green' : 'red'; // Warna hijau untuk lulus, merah untuk tidak lulus
             } else {
-                resultDiv.textContent = 'Nama tidak ditemukan atau tidak ada pengumuman untuk nama tersebut.';
-                resultDiv.style.color = 'black';
+                resultElement.textContent = 'Data tidak ditemukan';
+                resultElement.style.color = 'black';
             }
         }
 
-        // Menangani toggle menu
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('show-menu'); // Menambahkan class untuk menampilkan atau menyembunyikan menu
+        // Menampilkan atau menyembunyikan menu pada versi mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.getElementById('menuList');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
         });
     </script>
 </body>
